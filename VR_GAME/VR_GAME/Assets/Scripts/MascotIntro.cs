@@ -127,7 +127,7 @@ public class MascotIntro : MonoBehaviour
         }
         else
         {
-            Debug.LogError("❌ XRSimpleInteractable manquant sur la mascotte!");
+            Debug.LogError("Missing XRSimpleInteractable on the mascot!");
         }
         
         // Vérifier le collider
@@ -138,7 +138,7 @@ public class MascotIntro : MonoBehaviour
         }
         else
         {
-            Debug.LogError("❌ BoxCollider manquant!");
+            Debug.LogError("Missing BoxCollider!");
         }
     }
 

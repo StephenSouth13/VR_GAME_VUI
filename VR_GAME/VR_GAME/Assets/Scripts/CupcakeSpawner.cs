@@ -40,7 +40,7 @@ public class CupcakeSpawner : MonoBehaviour
             }
             else
             {
-                Debug.LogError("❌ Aucun marteau trouvé avec le tag 'Hammer'!");
+                Debug.LogError("No hammer found with tag 'Hammer'!");
             }
         }
         
