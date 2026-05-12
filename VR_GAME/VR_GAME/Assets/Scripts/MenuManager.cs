@@ -58,8 +58,8 @@ public class MenuManager : MonoBehaviour
     public string quitButtonAnimationName = "Scene";
 
     // ========== PRIVATE VARIABLES ==========
-    private XRSimpleInteractable playXR;
-    private XRSimpleInteractable quitXR;
+    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable playXR;
+    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable quitXR;
     
     private Renderer playRenderer;
     private Renderer quitRenderer;
@@ -343,7 +343,7 @@ public class MenuManager : MonoBehaviour
             playAudio.spatialBlend = 0;
         }
 
-        playXR = playButtonObject.GetComponent<XRSimpleInteractable>();
+        playXR = playButtonObject.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable>();
         if (playXR != null)
         {
             playXR.hoverEntered.AddListener(OnPlayHoverEnter);
@@ -376,7 +376,7 @@ public class MenuManager : MonoBehaviour
             quitAudio.spatialBlend = 0;
         }
 
-        quitXR = quitButtonObject.GetComponent<XRSimpleInteractable>();
+        quitXR = quitButtonObject.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable>();
         if (quitXR != null)
         {
             quitXR.hoverEntered.AddListener(OnQuitHoverEnter);

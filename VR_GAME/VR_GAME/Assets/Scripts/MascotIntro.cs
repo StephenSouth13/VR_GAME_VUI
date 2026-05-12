@@ -111,7 +111,7 @@ public class MascotIntro : MonoBehaviour
     void SetupInteraction()
     {
         // XR pour VR controllers - utiliser celui qui existe déjà
-        XRSimpleInteractable xr = GetComponent<XRSimpleInteractable>();
+        UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable xr = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable>();
         
         if (xr != null)
         {
@@ -377,7 +377,7 @@ public class MascotIntro : MonoBehaviour
 
     void OnDestroy()
     {
-        XRSimpleInteractable xr = GetComponent<XRSimpleInteractable>();
+        UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable xr = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable>();
         if (xr != null)
         {
             xr.hoverEntered.RemoveAllListeners();

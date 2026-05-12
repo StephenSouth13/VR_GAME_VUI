@@ -62,7 +62,7 @@ public class CupcakeSpawner : MonoBehaviour
         {
             if (hammerScript != null)
             {
-                var grabInteractable = hammerScript.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable>();
+                var grabInteractable = hammerScript.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
                 if (grabInteractable != null && grabInteractable.isSelected)
                 {
                     hammerWasGrabbed = true;

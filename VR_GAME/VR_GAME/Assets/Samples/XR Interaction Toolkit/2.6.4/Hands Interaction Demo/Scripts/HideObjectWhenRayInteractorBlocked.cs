@@ -7,7 +7,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.Hands
     {
         [SerializeField]
         [Tooltip("The XRRayInteractor that this component monitors for blockages.")]
-        XRRayInteractor m_Interactor;
+        UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor m_Interactor;
 
         [SerializeField]
         [Tooltip("The GameObject to hide when the XRRayInteractor is blocked.")]
@@ -26,8 +26,14 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.Hands
         /// See <see cref="MonoBehaviour"/>.
         /// </summary>
         void Update()
-        {
-            m_ObjectToHide.SetActive(m_Interactor.isActiveAndEnabled && !m_Interactor.IsBlockedByInteractionWithinGroup());
-        }
+{
+    if (m_Interactor == null || m_ObjectToHide == null)
+        return;
+
+    bool isBlocked = m_Interactor.hasSelection && 
+                     m_Interactor.interactablesSelected.Count > 0;
+
+    m_ObjectToHide.SetActive(m_Interactor.isActiveAndEnabled && !isBlocked);
+}
     }
 }

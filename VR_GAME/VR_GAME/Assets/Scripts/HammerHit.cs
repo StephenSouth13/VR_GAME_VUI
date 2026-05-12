@@ -16,7 +16,7 @@ public class HammerHit : MonoBehaviour
     
     private AudioSource audioSource;
     private bool canHit = true;
-    private XRGrabInteractable grabInteractable;
+    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
     private Rigidbody rb;
     private CupcakeSpawner spawner;
     
@@ -41,7 +41,7 @@ public class HammerHit : MonoBehaviour
             col.isTrigger = false;
         }
         
-        grabInteractable = GetComponent<XRGrabInteractable>();
+        grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
         if (grabInteractable != null)
         {
             grabInteractable.selectEntered.AddListener(OnGrabbed);
@@ -115,7 +115,7 @@ public class HammerHit : MonoBehaviour
                 Rigidbody cupcakeRb = collision.gameObject.GetComponent<Rigidbody>();
                 if (cupcakeRb != null)
                 {
-                    cupcakeRb.velocity = Vector3.zero;
+                    cupcakeRb.linearVelocity = Vector3.zero;
                     cupcakeRb.angularVelocity = Vector3.zero;
                     cupcakeRb.isKinematic = true;
                 }
